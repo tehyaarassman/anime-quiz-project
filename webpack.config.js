@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
 
   // Path to your entry point. From this file Webpack will begin its work
-  entry: './src/App.jsx',
+  entry: './src/index.js',
 
   // Path and filename of your result bundle.
   // Webpack will bundle all JavaScript into this file
@@ -14,7 +14,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    port: 'auto',
+    static: {
+      publicPath: '/dist/',
+    },
+    port: 8080,
+    proxy: {
+      '/routes': 'localhost:3000',
+    },
   },
   module: {
     rules: [
@@ -29,19 +35,19 @@ module.exports = {
         }
       },
 
-      {    // Apply rule for .sass, .scss or .css files
+      {   
         test: /\.(sa|sc|c)ss$/,
         use: [
+          {
+            loader: "style-loader"
+          },
           {
             // This loader resolves url() and @imports inside CSS
             loader: "css-loader",
           },
           {
-            // Then we apply postCSS fixes like autoprefixer and minifying
-            loader: "postcss-loader"
-          },
-          {
             // First we transform SASS to standard CSS
+            //move above css and  
             loader: "sass-loader",
             options: {
               implementation: require("sass")
@@ -73,6 +79,8 @@ module.exports = {
   // Depending on mode Webpack will apply different things
   // on the final bundle. For now, we don't need production's JavaScript 
   // minifying and other things, so let's set mode to development
+
+  //process.env.NODE_ENV for mode
   mode: 'development',
   plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
 };

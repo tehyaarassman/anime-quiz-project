@@ -4,9 +4,10 @@
   "description": "Solo project for Codesmith",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --mode development"
+    "start": "node server/server.js",
+    "dev": "concurrently \"webpack serve --mode development\" \"node server/server.js\"",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,16 @@
     "postcss-loader": "^6.2.0",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.64.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
   },
   "dependencies": {
+    "concurrently": "^6.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
