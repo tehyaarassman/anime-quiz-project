@@ -27,7 +27,7 @@ class Quiz extends Component {
     console.log(this.state.questions)
     const array = [];
     for (let i = 0; i < this.state.questions.length; i++) {
-      array.push(<Question id={`id: ${i}`} key={`key:${i}`} questions={this.state.questions[i]} />)
+      array.push(<Question key={this.state.questions[i]._id} questions={this.state.questions[i]} />)
     }
     return (
       <div>
