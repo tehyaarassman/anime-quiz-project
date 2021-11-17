@@ -4,7 +4,7 @@ class Question extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className={'question-div'}>
           {this.props.questions.question}
         </div>
         <button id={'buttonOne'} onClick={this.props.handleClickOne}>{this.props.questions.answerOne}</button>

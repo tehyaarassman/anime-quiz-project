@@ -5,6 +5,8 @@ import img2 from './images/answerTwo/nezuko-cat.jpg';
 import img3 from './images/answerThree/sasuke-cat.png';
 import img4 from './images/answerTwo/hinata-cat.jpeg';
 import img5 from './images/answerOne/deku-cat.jpeg';
+import img6 from './images/answerThree/Shinobu-cat.jpg';
+import img7 from  './images/answerTwo/totoro-cat.jpeg';
 // import { ProgressPlugin } from 'webpack';
 
 const Modal = ({ handleClose, show, children, prop }) => {
@@ -25,7 +27,15 @@ const Modal = ({ handleClose, show, children, prop }) => {
   }
   else if (prop.answerFour > prop.answerOne && prop.answerFour > prop.answerTwo && prop.answerFour > prop.answerThree) {
     url = img4;
-    description = 'You are Hinata Cat! You are a shy and try to blend in to your surroundings. You are always working your hardest to become a better person and are always practicing to become more skilled. You are devoted to your friends and loved ones.'
+    description = 'You are Hinata Cat! You are a shy and try to blend in to your surroundings. You are always working your hardest to become a better person and are always practicing to become more skilled. You are devoted to your friends and loved ones.';
+  }
+  else if (prop.answerThree >= prop.answerOne || prop.answerThree >= prop.answerTwo) {
+    url = img7;
+    description = 'You are Totoro Cat! You are a kind soul. You can be strange at times, but you are loveable nonetheless!'
+  }
+  else if (prop.answerOne >= prop.answerTwo || prop.answerOne >= prop.answerFour) {
+    url = img6;
+    description = 'You are Shinobu Cat! You are cool, calm and collected. You are inventive and versatile in your abilities and wit. Plus you are cute!';
   }
   else {
     url = img5;

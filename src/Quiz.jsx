@@ -94,9 +94,9 @@ class Quiz extends Component {
         </div>
         <form >
         <Modal prop={this.state} show={this.state.show} handleClose={this.hideModal}>
-          <p>RESULTS</p>
+          <p className={'modal-header'}>RESULTS</p>
         </Modal>
-        <button type="button" onClick={this.showModal}>Submit Quiz</button>
+        <button className={'submitBtn'} type="button" onClick={this.showModal}>Submit Quiz</button>
         </form>
       </div>
     );
