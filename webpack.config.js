@@ -1,11 +1,17 @@
 // Webpack uses this to work with directories
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 module.exports = {
 
   // Path to your entry point. From this file Webpack will begin its work
   entry: './src/index.js',
-
+  resolve: {
+    fallback: {
+      // "path": require.resolve("path-browserify"),
+        "fs": false
+    },
+},
   // Path and filename of your result bundle.
   // Webpack will bundle all JavaScript into this file
   output: {
@@ -82,5 +88,5 @@ module.exports = {
 
   //process.env.NODE_ENV for mode
   mode: 'development',
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' }), new NodePolyfillPlugin()]
 };

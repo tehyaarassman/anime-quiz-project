@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ReactDom from "react-dom";
 // import '.styles.scss';
 import Quiz from "./Quiz.jsx";
+
+const getQuestions = 'http://localhost:3000/questions';
 
 class App extends Component{
   constructor(props){
@@ -9,10 +10,10 @@ class App extends Component{
   
   }
   render() {
-    <Quiz />
+    return(
+    <Quiz getQuestions = {getQuestions}/>
+    )
   }
 }
-ReactDom.render(<Quiz />, document.getElementById('app'));
-
 
 export default App;
