@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Question from './Question.jsx';
+import Modal from './Modal.jsx';
 // import "/styles.scss";
 //change to class component???
 //use life cycle??? to fetch?>???---component did mount(set up fetch to /questions)
@@ -10,8 +11,20 @@ class Quiz extends Component {
     super(props);
 
     this.state = {
+      show: false,
       questions: [],
+      answerOne: 0,
+      answerTwo: 0,
+      answerThree: 0,
+      answerFour: 0
     };
+    this.handleClickOne = this.handleClickOne.bind(this);
+    this.handleClickTwo = this.handleClickTwo.bind(this);
+    this.handleClickThree = this.handleClickThree.bind(this);
+    this.handleClickFour = this.handleClickFour.bind(this);
+    this.handleClickSubmit = this.handleClickSubmit.bind(this);
+    this.showModal = this.showModal.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
   componentDidMount() {
     fetch(this.props.getQuestions)
@@ -22,12 +35,54 @@ class Quiz extends Component {
       }
       )
   };
+  showModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
+  handleClickOne() {
+    this.setState(prevState => {
+      return {
+        answerOne: prevState.answerOne+1
+      }
+    })
+    console.log(this.state.answerOne);
+  }
+  handleClickTwo() {
+    this.setState(prevState => {
+      return {
+        answerTwo: prevState.answerTwo+1
+      }
+    })
+    console.log(this.state.answerTwo)
+  }
+  handleClickThree() {
+    this.setState(prevState => {
+      return {
+        answerThree: prevState.answerThree+1
+      }
+    })
+    console.log(this.state.answerThree)
+  }
+  handleClickFour() {
+    this.setState(prevState => {
+      return {
+        answerFour: prevState.answerFour+1
+      }
+    })
+    console.log(this.state.answerFour)
+  }
+  handleClickSubmit() {
+
+  }
 
   render() {
-    console.log(this.state.questions)
     const array = [];
     for (let i = 0; i < this.state.questions.length; i++) {
-      array.push(<Question key={this.state.questions[i]._id} questions={this.state.questions[i]} />)
+      array.push(<Question handleClickOne={this.handleClickOne} handleClickTwo={this.handleClickTwo} handleClickThree={this.handleClickThree} handleClickFour={this.handleClickFour} key={this.state.questions[i]._id} questions={this.state.questions[i]} />)
     }
     return (
       <div>
@@ -37,6 +92,12 @@ class Quiz extends Component {
         <div>
           {array}
         </div>
+        <form >
+        <Modal prop={this.state} show={this.state.show} handleClose={this.hideModal}>
+          <p>RESULTS</p>
+        </Modal>
+        <button type="button" onClick={this.showModal}>Submit Quiz</button>
+        </form>
       </div>
     );
   }

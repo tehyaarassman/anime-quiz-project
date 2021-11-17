@@ -23,6 +23,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
 })
 
+// app.get('/results', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '../src/results.html'));
+// })
 
 const MONGO_URI = 'mongodb+srv://tehyaarassman1:starwars1010@cluster0.oqx0c.mongodb.net/questionsCollection?retryWrites=true&w=majority';
 
