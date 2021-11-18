@@ -1,19 +1,103 @@
 body{
-  background-color: rgb(252, 221, 226);
+  background-color: rgb(247, 240, 241);
+  text-align: center;
+}
+
+.naruto-img {
+  margin-top: 2rem;
+  height: 40rem;
+  width: 60%;
+}
+
+.modal-header {
+  font-size: 4rem;
+}
+
+.outer-question {
+  border: solid .2rem rgb(182, 126, 135);
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 13rem;
+}
+
+.outerContainer {
+  width: 100%; margin: 0 auto;
+}
+
+.title-div {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  border:solid .2rem rgb(129, 54, 67);
+  border-radius: 8px;
+  background-color: rgb(165, 94, 103);
+}
+
+.title {
+  font-size: 4rem;
+  color: white;
 }
 
 .modal-header {
   margin: .5rem;
 }
 
-.question-div {
-  margin: 1.5rem;
+.question {
+  font-size: 1.5rem;
+  font-family:'Courier New', Courier, monospace;
+  color:rgb(54, 17, 23)
+}
 
+.question-div {
+  display: flex;
+  margin: 1.5rem;
+  justify-content: center;
 }
 
 .submitBtn {
-  margin: 1rem;
+  margin: 3rem;
   padding: 14px 40px;
   border-radius: 8px;
   border-color: pink;
+  height: 4rem;
+  width: 60%;
+  font-size: 1.5rem;
+  font-family:'Courier New', Courier, monospace;
+  color:rgb(54, 17, 23)
+}
+
+.submitBtn:hover {
+  background-color: lightgreen;
+  color:rgb(133, 50, 64);
+}
+
+#buttonOne, #buttonTwo, #buttonThree, #buttonFour {
+  background-color: rgb(168, 84, 95);
+  height: 4rem;
+  width: 10rem;
+  border:solid .2rem rgb(133, 50, 64);
+  color: white;
+  border-radius: 8px;
+  margin: 10px;
+  font-size: 1.1rem;
+  font-family:'Courier New', Courier, monospace;
+}
+
+#buttonOne:hover, #buttonTwo:hover, #buttonThree:hover, #buttonFour:hover {
+  background-color: lightgreen;
+  color:rgb(133, 50, 64);
+}
+
+#buttonOne:focus, #buttonTwo:focus, #buttonThree:focus, #buttonFour:focus {
+  background-color: lightgreen;
+  color:rgb(133, 50, 64);
+  outline: none;
+  box-shadow: none;
+}
+
+#buttonOne:active, #buttonTwo:active, #buttonThree:active, #buttonFour:active {
+  background-color: lightgreen;
+  color:rgb(133, 50, 64);
 }

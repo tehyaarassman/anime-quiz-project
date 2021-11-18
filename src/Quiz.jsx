@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question.jsx';
 import Modal from './Modal.jsx';
+import img1 from './images/cat3.jpeg'
 // import "/styles.scss";
 //change to class component???
 //use life cycle??? to fetch?>???---component did mount(set up fetch to /questions)
@@ -85,10 +86,11 @@ class Quiz extends Component {
       array.push(<Question handleClickOne={this.handleClickOne} handleClickTwo={this.handleClickTwo} handleClickThree={this.handleClickThree} handleClickFour={this.handleClickFour} key={this.state.questions[i]._id} questions={this.state.questions[i]} />)
     }
     return (
-      <div>
-        <div>
-          <h1>ANIME CAT QUIZ</h1>
+      <div className={'outerContainer'}>
+        <div className={'title-div'}>
+          <h1 className={'title'}>ANIME CAT QUIZ</h1>
         </div>
+        <img className={'naruto-img'} src={img1}></img>
         <div>
           {array}
         </div>

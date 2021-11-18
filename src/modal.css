@@ -18,7 +18,7 @@
 }
 
 #modal-img {
-  height: 100px;
+  height: 15rem;
   width: auto;
   display: block;
   margin-left: auto;
@@ -35,13 +35,20 @@
 }
 
 .description {
-  padding-top: .5rem;
+  padding-top: 2rem;
   margin: .5rem;
+  font-size: 1.3rem;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .closeBtn {
   margin: .5rem;
-  height: 40px;
-  width: 80px;
+  height: 4rem;
+  width: 10rem;
   font: 20px;
+}
+
+.closeBtn:hover {
+  background-color: lightgreen;
+  color:rgb(133, 50, 64);
 }
