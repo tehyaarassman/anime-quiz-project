@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, '../src/results.html'));
 // })
 
-const MONGO_URI = 'mongodb+srv://tehyaarassman1:starwars1010@cluster0.oqx0c.mongodb.net/questionsCollection?retryWrites=true&w=majority';
+const MONGO_URI = '';
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'questionsCollection'});
 
