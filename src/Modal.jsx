@@ -27,7 +27,7 @@ const Modal = ({ handleClose, show, children, prop }) => {
   }
   else if (prop.answerFour > prop.answerOne && prop.answerFour > prop.answerTwo && prop.answerFour > prop.answerThree) {
     url = img4;
-    description = 'You are Hinata Cat! You are a shy and try to blend in to your surroundings. You are always working your hardest to become a better person and are always practicing to become more skilled. You are devoted to your friends and loved ones.';
+    description = 'You are Hinata Cat :( Sorry.';
   }
   else if (prop.answerThree >= prop.answerOne || prop.answerThree >= prop.answerTwo) {
     url = img7;
